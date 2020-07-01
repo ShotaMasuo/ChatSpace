@@ -33,6 +33,7 @@ Things you may want to cover:
 ### user's Association
 - has_many :chats
 - has_many :users_groups
+- has_many :groups, through: :users_groups
 
 
 
@@ -45,6 +46,7 @@ Things you may want to cover:
 ### group's Association
 - has_many :chats
 - has_many :users_groups
+- has_many :users, through: :users_groups
 
 
 
@@ -57,7 +59,7 @@ Things you may want to cover:
 |user_id|int|null: false, foreign_key: true|
 |group_id|int|null: false, foreign_key: true|
 
-### group's Association
+### chat's Association
 - belongs_to :user
 - belongs_to :group
 
@@ -70,6 +72,6 @@ Things you may want to cover:
 |user_id|int|null: false, foreign_key: true|
 |group_id|int|null: false, foreign_key: true|
 
-### group's Association
+### users_groups Association
 - belongs_to :user
 - belongs_to :group
