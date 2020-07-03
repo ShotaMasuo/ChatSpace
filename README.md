@@ -65,7 +65,7 @@ Things you may want to cover:
 
 
 
-## users_groupsテーブル
+## user_groupテーブル
 
 |Column|Type|Options|
 |------|----|-------|
