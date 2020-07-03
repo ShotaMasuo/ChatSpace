@@ -5,14 +5,16 @@
         = current_user.name
 
       .top-items__icons
-        = link_to edit_user_path(current_user), class: "top-items__edit-icon"  do
+        = link_to new_group_path, class: "top-items__setting-icon" do
           = icon('far', 'edit')
-        %a.top-items__setting-icon{:href => "#"} 
+        = link_to edit_user_path(current_user), class: "top-items__edit-icon"  do
           = icon('fas', 'cog')
   .side-bar__group-list
     .group-item
       %a.group-item__link-group{:href => "#"}
         .group-item__name
-          masa
-        .group-item__latest-message
-          まだメッセージありません
+          - current_user.groups.each do |group|
+            .Group__name
+              = group.name
+            .group-item__latest-message
+              まだメッセージありません
