@@ -12,7 +12,6 @@ class ChatsController < ApplicationController
     if @chat.save
       redirect_to group_chats_path(@group), notice: 'メッセージが送信されました'
     else
-      binding.pry
       @chats = @group.chats.includes(:user)
       flash.now[:alert] = 'メッセージを入力してください。'
       @members = @group.users
