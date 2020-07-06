@@ -10,11 +10,11 @@
         = link_to edit_user_path(current_user), class: "top-items__edit-icon"  do
           = icon('fas', 'cog')
   .side-bar__group-list
-    .group-item
-      %a.group-item__link-group{:href => "#"}
+    - current_user.groups.each do |group|
+      .group-item
         .group-item__name
-          - current_user.groups.each do |group|
+          = link_to group_chats_path(group), class: "group-item__link-group" do
             .Group__name
               = group.name
             .group-item__latest-message
-              まだメッセージありません
+              = group.show_last_chat
