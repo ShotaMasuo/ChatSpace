@@ -70,6 +70,7 @@ $white-color: #ffffff;
     background-color: #fafafa;
     height: calc(100vh - 100px - 90px);
     padding-left: 40px;
+    overflow: scroll;
   }
   &__message-form{
     background-color: #d2d2d2;
