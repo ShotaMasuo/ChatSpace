@@ -1,7 +1,6 @@
 $(function(){
   function buildChat(chat){
     if ( chat.image ){
-      console.log(chat.image);
       let html =
       `
       <div class="message-items">
