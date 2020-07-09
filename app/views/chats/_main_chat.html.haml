@@ -13,7 +13,7 @@
 
   .chat-main__message-list
     - @chats.each do |chat|
-      .message-items
+      .message-items{data: {chat: {id: chat.id}}}
         .over-message
           .over-message__sender
             =chat.user.name
