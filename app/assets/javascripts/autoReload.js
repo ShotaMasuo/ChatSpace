@@ -47,7 +47,6 @@ $(function(){
   let reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     let last_chat_id = $('.message-items:last').data("chat-id");
-    console.log(last_chat_id);
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
       url: "api/chats",
@@ -58,7 +57,6 @@ $(function(){
       data: {id: last_chat_id}
     })
     .done(function(chats) {
-      console.log("OK!");
       // 更新するメッセージがなかった場合は.doneの後の処理が動かないようにする
       if (chats.length !== 0) {
         //追加するHTMLの入れ物を作る
